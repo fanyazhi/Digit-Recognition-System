@@ -98,7 +98,6 @@ void update_knn( digit test_inst, digit train_inst, bit6_t min_distances[K_CONST
   int dist = 0;
   digit difference = test_inst ^ train_inst;
 
-DIFFERENCE_LOOP:
   for (int i = 0; i < 49; i++){
 	  if (difference%2 != 0) {
 		  dist++;
@@ -106,8 +105,7 @@ DIFFERENCE_LOOP:
 	  difference = difference >> 1;
   }
   // update the min distance array if this test_inst has less distance than 
-  // any of the current distances stored. Keep the array sorted.
-DISTANCE_LOOP:  
+  // any of the current distances stored. Keep the array sorted.  
 for (int i = 0; i < K_CONST; i++) {
 	  if ((dist < min_distances[i] && dist >= min_distances[i+1]) ||
 	      (dist < min_distances[i] && min_distances[i] == 50) ||
@@ -137,18 +135,14 @@ bit4_t knn_vote( bit6_t knn_set[10][K_CONST] )
   bit6_t min_distances[K_CONST];
   bit4_t voters[K_CONST];
   
-VOTEINIT_LOOP:
   for ( int k = 0; k < K_CONST; k++ ) {
          min_distances[k] = 50;  
   }
  
  
-MINDISTANCE_LOOP:
   // find K_CONST number of minimum distances
   for (int i = 0; i < 10; i++) {
-	MINDISTANCE_INNRER_LOOP1:
 	  for (int j = 0; j < K_CONST; j++) {
-		MINDISTANCE_INNRER_LOOP2:
 		  for (int k = 0; k <K_CONST; k++) {
 			  if ((knn_set[i][j] < min_distances[k] && knn_set[i][j] >= min_distances[k+1]) ||
               		(knn_set[i][j] < min_distances[k] && min_distances[k] == 50) ||
@@ -165,17 +159,14 @@ MINDISTANCE_LOOP:
   bit6_t min_voter = 0;	// tie breaker: digit with the min distance
   bit6_t min_dist = 50;	// distance of the tie breaker
 
-ZEROVOTE_LOOP:
   // initialize all digit's votes to 0
   for (int i = 0; i < 10; i++) {
   	votes[i] = 0;
   }
 
-VOTING_LOOP:
   // put valid votes in 
   for (int i = 0; i < K_CONST; i++) {
   	votes[voters[i]]++;
-	//std::cout << "voter" << i << " voted for " << voters[i] << "with distance " << min_distances[i]<< std::endl;
 	// find the tie breaker
 	if (min_distances[i] < min_dist) {
 		 min_dist = min_distances[i];
@@ -183,7 +174,6 @@ VOTING_LOOP:
   	}
   } 
 
-COUNT_LOOP:
   // find the digit with the most vote
   // if two digits have the same amount of vote, check if it is tie breaker
   for (bit4_t i = 1; i < 10; i++) {
@@ -193,6 +183,5 @@ COUNT_LOOP:
 		result = i;
 	}
   }
-  //std::cout << result <<std::endl;
   return result;
 }
