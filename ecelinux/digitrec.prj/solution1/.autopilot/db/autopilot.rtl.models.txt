@@ -1,0 +1,9 @@
+dut_mux_3to1_sel2_6_1
+dut_mux_3to1_sel2_4_1
+dut_knn_vote_votes_V
+dut_digitrec_training_data_V
+dut_digitrec_knn_set_V
+dut_update_knn
+dut_knn_vote
+dut_digitrec
+dut

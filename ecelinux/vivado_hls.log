@@ -1,0 +1,125 @@
+================================================================
+  Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC
+  Version 2016.2
+  Build 1577090 on Thu Jun 02 16:59:10 MDT 2016
+  Copyright (C) 1986-2016 Xilinx, Inc. All Rights Reserved.
+================================================================
+INFO: [HLS 200-10] Running '/opt/xilinx/xilinx_2016.2/Vivado_HLS/2016.2/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'yf92' on host 'en-ec-ph314-05.ece.cornell.edu' (Linux_x86_64 version 3.10.0-862.11.6.el7.x86_64) on Fri Oct 05 21:36:00 EDT 2018
+INFO: [HLS 200-10] On os "Red Hat Enterprise Linux Server release 7.5 (Maipo)"
+INFO: [HLS 200-10] In directory '/home/yf92/ece5775/lab3/ecelinux'
+INFO: [HLS 200-10] Creating and opening project '/home/yf92/ece5775/lab3/ecelinux/digitrec.prj'.
+INFO: [HLS 200-10] Adding design file 'digitrec.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'digitrec_test.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'data' to the project
+INFO: [HLS 200-10] Creating and opening solution '/home/yf92/ece5775/lab3/ecelinux/digitrec.prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Analyzing design file 'digitrec.cpp' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-102] Automatically partitioning small array 'min_distances.V' (digitrec.cpp:137) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'voters.V' (digitrec.cpp:138) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'min_distances.V' (digitrec.cpp:137) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'voters.V' (digitrec.cpp:138) in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (digitrec.cpp:141:34) to (digitrec.cpp:141:27) in function 'knn_vote'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (digitrec.cpp:152:33) to (digitrec.cpp:152:27) in function 'knn_vote'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (digitrec.cpp:189:36) to (digitrec.cpp:189:30) in function 'knn_vote'... converting 4 basic blocks.
+INFO: [HLS 200-111] Elapsed time: 5.11 seconds; current memory usage: 149 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dut' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_update_knn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 149 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_update_knn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.08 seconds; current memory usage: 149 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_knn_vote' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.12 seconds; current memory usage: 150 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_knn_vote' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.23 seconds; current memory usage: 151 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut_digitrec' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.25 seconds; current memory usage: 151 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut_digitrec' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.1 seconds; current memory usage: 151 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Scheduling module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Elapsed time: 0.15 seconds; current memory usage: 151 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Exploring micro-architecture for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Elapsed time: 0.04 seconds; current memory usage: 151 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_update_knn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_update_knn'.
+INFO: [HLS 200-111] Elapsed time: 0.08 seconds; current memory usage: 152 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_knn_vote' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dut_mux_3to1_sel2_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dut_mux_3to1_sel2_6_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_knn_vote'.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 154 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut_digitrec' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut_digitrec'.
+INFO: [HLS 200-111] Elapsed time: 0.43 seconds; current memory usage: 157 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dut' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_in_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dut/strm_out_V_V' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dut' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dut'.
+INFO: [HLS 200-111] Elapsed time: 0.14 seconds; current memory usage: 158 MB.
+INFO: [RTMG 210-278] Implementing memory 'dut_knn_vote_votes_V_ram' using distributed RAMs.
+INFO: [RTMG 210-279] Implementing memory 'dut_digitrec_training_data_V_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'dut_digitrec_knn_set_V_ram' using distributed RAMs.
+INFO: [HLS 200-10] Finished generating all RTL models.
+INFO: [SYSC 207-301] Generating SystemC RTL for dut.
+INFO: [VHDL 208-304] Generating VHDL RTL for dut.
+INFO: [VLOG 209-307] Generating Verilog RTL for dut.
+INFO: [HLS 200-112] Total elapsed time: 71.348 seconds; peak memory usage: 158 MB.
